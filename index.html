@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flipkart | Book Exchange Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapp">
+        <form id="form">
+            <header class="header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="col-lg-6 col-md-6">
+                                        <p> Book Exchange Site </p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-6 col-md-6">
+                                            <input id="username" class="form-control" placeholder="Enter User Name">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <button class="btn btn-primary" onclick="funcSubmit();">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="container">
+                        <section class="row">
+                            <div class="table-responsive">
+                                <div class="col-md-6 col-sm-4">
+                                    <table class="table table-striped table-bordered" id="Table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">ID</th>
+                                                <th class="text-center">Title</th>
+                                                <th class="text-center">Author</th>
+                                                <th class="text-center">Lender</th>
+                                                <th class="text-center">Borrower</th>
+                                                <th class="text-center" colspan="3">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="row1">
+                                                <td id="idRow">1</td>
+                                                <td>Javascript for Beginner</td>
+                                                <td>Johnas Io</td>
+                                                <td>Userc</td>
+                                                <td>UserB</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm" disabled>Request
+                                                        Next
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow<span><i
+                                                                aria-hidden="true"></i></span></button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return</button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete</button></td>
+                                            </tr>
+                                            <tr id="row2">
+                                                <td id="idRow">2</td>
+                                                <td>Javascript for Intermediate</td>
+                                                <td>Johnas Io</td>
+                                                <td>Userc</td>
+                                                <td>-</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm"
+                                                        style="display: none;">Request
+                                                        Next
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="" style="display: block" disabled>Borrow
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button></td>
+                                            </tr>
+                                            <tr id="row3">
+                                                <td id="idRow">3</td>
+                                                <td>Book3</td>
+                                                <td>Author3</td>
+                                                <td>UserD</td>
+                                                <td>UserC</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm"
+                                                        style="display: none;">Request
+                                                        Next
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button>
+
+                                                    <p>Requested by UserB</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="row4">
+                                                <td id="idRow">4</td>
+                                                <td>Book4</td>
+                                                <td>Author4</td>
+                                                <td>UserA</td>
+                                                <td>-</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm"
+                                                        style="display: none;">Request
+                                                        Next
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button>
+
+                                                    <p>-</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="row5">
+                                                <td id="idRow">5</td>
+                                                <td>Book5</td>
+                                                <td>Author5</td>
+                                                <td>UserA</td>
+                                                <td>-</td>
+                                                <td><button type="button" class="btn btn-primary btn-sm"
+                                                        style="display: none;">Request
+                                                        Next
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button>
+
+                                                    <p>-</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="row6">
+                                                    <td id="idRow">6</td>
+                                                    <td>Book6</td>
+                                                    <td>Author6</td>
+                                                    <td>UserB</td>
+                                                    <td>UserA</td>
+                                                    <td id="Row6"><button type="button" class="btn btn-primary btn-sm"
+                                                            style="display: none;">Request
+                                                            Next
+                                                        </button>
+                                                        <button type="button" class="btn btn-success btn-sm btn-add"
+                                                            onclick="insRow();" id="btn-success">ADD Book</button>
+                                                        <button type="button" class="btn btn-success btn-sm btn-req"
+                                                            onclick="">Request Next</button>
+                                                        <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                            onclick="">Borrow
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                            onclick="" style="display:block;" disabled>Return
+                                                        </button>
+    
+                                                        <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                            onclick="deleteRow(this);">Delete <span><i
+                                                                    class="fa fa-minus-circle"
+                                                                    aria-hidden="true"></i></span></button>
+    
+                                                        <p style="display:none;">-</p>
+                                                    </td>
+                                                </tr>
+                                            <tr id="row7">
+                                                <td id="idRow">7</td>
+                                                <td>Javascript for Advance</td>
+                                                <td>Johnas Io</td>
+                                                <td>UserB</td>
+                                                <td>UserA</td>
+                                                <td ><button type="button" class="btn btn-primary btn-sm"
+                                                        style="display: none;" >Request
+                                                        Next<span><i class="fa fa-arrow-circle-down"
+                                                                aria-hidden="true"></i></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next</button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow<span><i
+                                                                aria-hidden="true"></i></span></button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="" style="display:block" disabled>Return<span><i
+                                                                aria-hidden="true"></i></span></button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button></td>
+                                            </tr>
+                                            <tr id="row8">
+                                                <td id="idRow">8</td>
+                                                <td><input type="text" name="title" id="title"></td>
+                                                <td><input type="text" name="author" id="author"></td>
+                                                <td><input type="text" name="lender" id="lender"></td>
+                                                <td><input type="text" name="borrower" id="borrower"></td>
+                                                <td><button type="button" class="btn btn-primary btn-sm" disabled>Request
+                                                        Next<span><i class="fa fa-arrow-circle-down"
+                                                                aria-hidden="true"></i></span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-add"
+                                                        onclick="insRow();" id="btn-success">ADD Book<span><i
+                                                                class="fa fa-plus-circle"
+                                                                aria-hidden="true"></i></span></button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-req"
+                                                        onclick="">Request Next<span><i
+                                                                aria-hidden="true"></i></span></button>
+                                                    <button type="button" class="btn btn-success btn-sm btn-borrow"
+                                                        onclick="">Borrow<span><i
+                                                                aria-hidden="true"></i></span></button>
+                                                    <button type="button" class="btn btn-danger btn-sm btn-return"
+                                                        onclick="">Return<span><i
+                                                                aria-hidden="true"></i></span></button>
+
+                                                    <button type="button" class="btn btn-danger btn-sm btn-del"
+                                                        onclick="deleteRow(this);">Delete <span><i
+                                                                class="fa fa-minus-circle"
+                                                                aria-hidden="true"></i></span></button></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="main.js"></script>
+
+</html>
